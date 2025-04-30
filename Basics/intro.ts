@@ -1,3 +1,3 @@
 let user = {name: "Siddharth", age: 20}
 console.log(user.name);
-console.log(user.email);
+// console.log(user.email);
