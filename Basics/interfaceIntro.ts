@@ -36,6 +36,24 @@ const myCourse: Course = {
     }
 }
 
+interface Musician {
+    name: string,
+    instrument: string,
+    play(action: string): string
+}
 
+class Guitarist implements Musician {
+    instrument: string
+    constructor(public name: string, instrument: string) {
+        this.name = name
+        this.instrument = instrument
+    }
+    play(action: string) {
+        return `${this.name} ${action} the ${this.instrument}`
+    }
+}
+
+const Peter = new Guitarist("Peter", "Guitar")
+console.log(Peter.play("strums")) // Peter strums the Guitar
 
 export {}
