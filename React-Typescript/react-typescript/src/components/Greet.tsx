@@ -2,11 +2,12 @@
 
 type GreetProps = {
     name: string,
-    messageCount: number,
+    messageCount?: number,  // optional prop
     isLoggedIn: boolean
 }
 
 export const Greet = (props: GreetProps) => {
+    const { messageCount = 0 } = props; // default value for optional prop
     return (
         <div>
             <h2>

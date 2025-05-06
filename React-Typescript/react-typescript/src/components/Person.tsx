@@ -1,11 +1,5 @@
 // typing an object prop
-
-type PersonProps = {
-    name: {
-        first: string,
-        last: string
-    }
-}
+import type {PersonProps} from "./Person.types"  // This is a prop that can accept an object with first and last name
 
 export const Person = (props: PersonProps) => {
     return (
