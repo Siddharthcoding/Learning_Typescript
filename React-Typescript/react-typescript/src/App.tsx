@@ -12,6 +12,10 @@ import { ThemeContextProvider } from './components/context/ThemeContext';
 import { Box } from './components/context/Box'
 import { UserContextProvider } from './components/context/UserContext';
 import { User } from './components/State/User'
+import { Counter } from './class/Counter'
+import { Private } from './components/auth/Private'
+import { Profile } from './components/auth/Profile'
+import { List } from './components/generics/List'
 
 function App() {
   const personName = {
@@ -54,6 +58,16 @@ function App() {
         <UserContextProvider>
           <User />
         </UserContextProvider>
+        <Counter message='The count value is ' />
+        <Private isLoggedIn={true} component={Profile}/>
+        <List 
+          items={['Superman', 'Batman', 'Spiderman']} 
+          onClick={(item) => console.log(item)}
+        />
+        <List 
+          items={[1, 2, 3]} 
+          onClick={(item) => console.log(item)}
+        />
       </div>
     </>
   )
