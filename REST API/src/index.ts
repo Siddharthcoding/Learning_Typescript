@@ -6,6 +6,7 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import { router as authRoutes } from '../src/routes/authentication.js';
 
 dotenv.config();
 
@@ -35,3 +36,5 @@ const connectDB = async () => {
     }
 };
 connectDB();
+
+app.use('/auth', authRoutes);
