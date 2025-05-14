@@ -7,6 +7,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { router as authRoutes } from '../src/routes/authentication.js';
+import { router as userRoutes } from '../src/routes/user.js';
 
 dotenv.config();
 
@@ -38,3 +39,4 @@ const connectDB = async () => {
 connectDB();
 
 app.use('/auth', authRoutes);
+app.use('/', userRoutes);
