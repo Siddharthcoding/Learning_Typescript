@@ -17,6 +17,7 @@ export function getUserById(req: Request<{
 export function createUser(req: Request<{}, {}, CreateUserDto, CreateUserQueryParams>, res: Response<User>) {
     // req.body.email;
     // req.query.loginAfterCreate;
+    req.customField = 'test'; // This is how you can add a custom field to the request object
 
     res.status(201).send({
         id: 1,
